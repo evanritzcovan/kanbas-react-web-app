@@ -1,66 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
-   <title>Kanbas</title>
+  <meta charset="UTF-8"/>
+  <title>Profile</title>
+  
+  <link href="./index.css" rel="stylesheet"/>
+  <link href="../nav/navbar.css" rel="stylesheet"/>
+  <link href="../nav/coursenav.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-   <table width="100%">
-      <tbody>
-         <tr>
-            <td valign="top">
-               <ul>
-                  <li><a href=".">Account</a></li>
-                  <li><a href="#">Dashboard</a></li>
-                  <li><a href="../home.html">Courses</a></li>
-                  <li><a href="#">Calendar</a></li>
-                  <li><a href="#">Inbox</a></li>
-                  <li><a href="#">History</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Commons</a></li>
-                  <li><a href="#">Help</a></li>
-               </ul>
-            </td>
-            <td valign="top">
-               <ul>
-                  <li><a href="#">Notifications</a></li>
-                  <li><a href=".">Profile</a></li>
-                  <li><a href="#">Files</a></li>
-                  <li><a href="#">Settings</a></li>
-                  <li><a href="#">ePortfolios</a></li>
-                  <li><a href="#">Shared Content</a></li>
-                  <li><a href="#">The Hub</a></li>
-                  <li><a href="#">Qwicky Course Tools</a></li>
-                  <li><a href="#">Global Announcements</a></li>
-               </ul>
-            </td>
-            <td valign="top">
-               <p>Evan Ritzcovan's Profile</p>
-               <hr/>
-               <br/>
-               <table width="100%">
-                  <tbody>
-                     <tr>
-                        <td valign="top">
-                           <h2 style="margin-top: 0">Evan Ritzcovan</h2>
-                           <h3>Contact</h3>
-                           <p>No registered services, you can add some on the <a style="text-decoration: none" href="#">settings</a> page.</p>
-                           <h3>Biography</h3>
-                           <p>Web dev student.</p>
-                           <h3>Links</h3>
-                           <a style="text-decoration: none" href="https://github.com/evanritzcovan">GitHub</a>
-                        </td>
-                        <td valign="top">
-                           <button type="button">
-                              <a href="edit.html" style="text-decoration: none; color: black">&#x270E; Edit Profile</a>
-                           </button>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-            </td>
-         </tr>
-      </tbody>
-   </table>
+  <div class="container m-0" style="width: 100%; height: 75px">
+    <div class="row align-items-start" style="height: 75px">
+      <div class="col-2 d-none d-lg-block navbar bg-black">
+        <ul class="nav flex-column">
+          <div class="nu-logo-navbar text-center" style="height: 75px">
+            <img src="../images/nu_logo.png" alt="NU Logo" height="50px" width="55px"/>
+          </div>
+        </ul>
+      </div>
+      <div class="col" style="padding: 20px; height: 75px">
+        <h4 style="color: #E8001E">
+          <i class="fa-solid fa-bars"></i>
+          &nbsp; &nbsp; &nbsp;
+          <span style="color: black; font-size: smaller">Evan Ritzcovan's Profile</span>
+        </h4>
+        <hr/>
+      </div>
+    </div>
+  </div>
+
+  <div class="container m-0">
+    <div class="row align-items-start">
+      <div class="col-2 d-none d-lg-block navbar bg-black">
+        <ul class="nav flex-column">
+          <li class="nav-item bg-white">
+            <a class="nav-link current" id="acc-icon" href="./index.html">
+              <span class="fa-stack text-center icon-span">
+                <i class="fa-regular fa-circle fa-stack-2x" style="width: 100%; text-align: center; color: grey"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse nav-icon" style="color: grey"></i>
+              </span>
+              Account
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/index.html" id="dash-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-solid fa-gauge-high fa-2xl nav-icon"></i>
+              </span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../home/index.html" id="courses-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-solid fa-book fa-xl nav-icon"></i>
+              </span>
+              Courses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="cal-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-solid fa-calendar-days fa-xl nav-icon"></i>
+              </span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="inbox-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-solid fa-inbox fa-xl nav-icon"></i>
+              </span>
+              Inbox
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="history-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-regular fa-clock fa-xl nav-icon"></i>
+              </span>
+              History
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="studio-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-solid fa-tv fa-xl nav-icon"></i>
+              </span>
+              Studio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="commons-icon">
+              <span class="fa-stack text-center icon-span">
+                <i class="fa-solid fa-c fa-stack-2x nav-icon"></i>
+                <i class="fa-solid fa-arrow-right fa-stack-1x fa-inverse nav-icon"></i>
+              </span>
+              Commons
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="help-icon">
+              <span class="fa-stack icon-span">
+                <i class="fa-regular fa-circle-question fa-xl nav-icon"></i>
+              </span>
+              Help
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-3 d-none d-md-block second-col">
+        <ul class="course-navigation list-group">
+          <li class="list-group-item">
+            <a href="#">Notifications</a>
+          </li>
+          <li class="list-group-item active">
+            <a href="./index.html">Profile</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">Files</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">Settings</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">ePortfolios</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">Shared Content</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">The Hub</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">Quickly Course Tools</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">Global Announcements</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col" style="font-family: Arial, Helvetica, sans-serif">
+        <span class="fa-stack text-center fa-5x">
+          <i class="fa-regular fa-circle fa-stack-2x" style="color: grey"></i>
+          <i class="fa-solid fa-user fa-stack-1x fa-inverse" style="color: grey"></i>
+        </span>
+        <a href="./edit.html">
+          <button class="btn" style="float: right; background-color: whitesmoke; padding: 6px 14px 6px 14px">
+            <i class="fa-solid fa-pencil fa-flip-horizontal" style="margin-right: 5px;"></i>
+            Edit Profile
+          </button>
+        </a>
+        <h2 style="padding-top: 10px">Evan Ritzcovan</h2>
+        <br/>
+        <h3>Contact</h3>
+        <div class="profile-text">
+          No registered services, you can add some on the
+          <a href="#" class="profile-text-link">settings</a> page.
+        </div>
+        <h3>Biography</h3>
+        <div class="profile-text">Web dev student.</div>
+        <h3>Links</h3>
+        <div class="profile-text">
+          <i class="fa-solid fa-link"></i>
+          <a href="https://github.com/evanritzcovan" class="profile-text-link">
+            Github
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <i class="fa-solid fa-link"></i>
+          <a href="https://youtube.com/@WebDevTV" class="profile-text-link">
+            YouTube
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

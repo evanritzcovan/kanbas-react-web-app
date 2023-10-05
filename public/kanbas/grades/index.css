@@ -1,0 +1,14 @@
+.grd-btn{
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    height: 40px;
+}
+
+td {
+    text-align: center;
+}
+
+.out-of{
+    font-size: 13px;
+    display: inline-block;
+}

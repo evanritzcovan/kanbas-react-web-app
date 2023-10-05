@@ -1,0 +1,17 @@
+.profile-text {
+  padding-bottom: 10px;
+}
+
+.profile-text-link {
+  color: #ac1a1f;
+  text-decoration: none;
+}
+
+.edit-top-label {
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.edit-heading{
+    padding-top: 25px;
+}

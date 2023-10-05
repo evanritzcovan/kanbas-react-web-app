@@ -1,0 +1,52 @@
+.asgn_btn {
+  background-color: white;
+  border: 1px solid whitesmoke;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+.ms-6 {
+  margin-left: 72px;
+  font-size: 12px;
+  font-weight: 350;
+  display: block;
+}
+
+.list-group-item{
+    border-left: 2px solid green;
+}
+
+.list-group-item-secondary{
+    border-left: none;
+}
+
+.edit-col1 {
+    display: block;
+}
+
+.edit-col2 {
+    display: block;
+}
+
+.edit-lg{
+    border: 1px solid gray;
+}
+
+.edit-lgi{
+    border-left: none;
+    border: none;
+}
+
+.bg-secondary{
+    background-color:lightgray;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: black;
+}
