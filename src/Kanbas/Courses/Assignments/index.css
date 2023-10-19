@@ -1,0 +1,130 @@
+.asgn-btn {
+  background-color: white;
+  border: 1px solid whitesmoke;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 450;
+}
+
+.ms-6 {
+  margin-left: 72px;
+  font-size: 12px;
+  font-weight: 350;
+  display: block;
+}
+.list-group-item{
+    border-left: 2px solid green;
+}
+
+.list-group-item-secondary{
+    border-left: none;
+}
+
+.edit-col1 {
+    display: block;
+}
+
+.edit-col2 {
+    display: block;
+}
+
+.edit-lg{
+    border: 1px solid gray;
+}
+
+.edit-lgi{
+    border-left: none;
+    border: none;
+}
+
+.bg-secondary{
+    background-color:whitesmoke;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: black;
+}
+
+.home-dropdown {
+  display: inline;
+  height: 38px;
+}
+
+.home-dropdown .btn-secondary {
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 14px;
+  padding: 6px 12px;
+  height: 38px;
+}
+
+.module-btn {
+  color: white;
+  background-color: #E8001E;
+  margin-right: 4px;
+}
+
+.home-btn {
+  background-color: white;
+  margin-right: 4px;
+  border: 1px solid whitesmoke;
+}
+
+.home-status-btn {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+}
+
+.home-status-btn:hover {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid whitesmoke;
+  transform: scale(1.05); 
+}
+
+.home-publish-btn {
+  background-color: lightgreen;
+  margin-right: "4px";
+  width: 90px;
+  height: 30px;
+  border: 1px solid whitesmoke;
+  text-align: center;
+}
+
+.home-unpublish-btn {
+  background-color: white;
+  margin-right: "4px";
+  width: 90px;
+  height: 30px;
+  text-align: center;
+
+  border: 1px solid whitesmoke;
+}
+
+.home-pub-text {
+  font-size: 15px;
+  text-align: center;
+}
+
+.assignmentHR {
+  margin-top: 65px;
+  margin-bottom: 20px;
+}
+
+.weight-sm{
+  font-weight: 200;
+}
+
+.bold{
+  font-weight: 450;
+}

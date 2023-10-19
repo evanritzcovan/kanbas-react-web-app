@@ -1,0 +1,40 @@
+ul.course-navigation .list-group-item {
+    border: none;
+    padding: 15px 10px 0px 10px;
+}
+
+.second-col {
+    width: 200px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
+ul.course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+    border-radius: 0px;
+}
+
+ul.course-navigation a{
+    text-decoration: none;
+    color: #E8001E;
+}
+
+ul.course-navigation .list-group-item.active a{
+    text-decoration: none;
+    color: black;
+}
+
+.modules-div {
+  left: 320px;
+  top: 50px;
+}
+
+@media (max-width: 767px) {
+  .modules-div {
+    left: 30px;
+    top: 50px;
+  }
+}
