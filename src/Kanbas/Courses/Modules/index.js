@@ -8,16 +8,16 @@ function Modules() {
         <div style={{ paddingTop: "40px", width: "100%" }}>
         <div style={{ float: "right", display: "inline" }}>
             <button className="btn home-btn"
-            style={{ backgroundColor: "rgb(240, 237, 237)", marginRight: "4px", border: "1px solid rgb(217, 215, 215)" }}>
+            style={{ backgroundColor: "white", marginRight: "4px", border: "1px solid whitesmoke" }}>
             Collapse All
             </button>
             <button className="btn home-btn"
-            style={{ backgroundColor: "rgb(240, 237, 237)", marginRight: "4px", border: "1px solid rgb(217, 215, 215)" }}>
+            style={{ backgroundColor: "white", marginRight: "4px", border: "1px solid whitesmoke" }}>
             View Progress
             </button>
             <div className="dropdown home-dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                    style={{ backgroundColor: "rgb(240, 237, 237)", border: "none", color: "black", marginRight: "4px" }}>
+                    style={{ backgroundColor: "white", border: "none", color: "black", marginRight: "4px" }}>
                     <span className="fa-stack">
                     <FontAwesomeIcon icon={faCircle} className="fa-stack-2x" style={{ color: "green" }}/>
                     <FontAwesomeIcon icon={faCheck} className="fa-stack-1x" style={{ color: "white" }}/>
@@ -49,11 +49,11 @@ function Modules() {
                 </ul>
             </div>
             <button className="btn module-btn"
-                style={{ color: "white", backgroundColor: "#cf3036", marginRight: "4px", border: "1px solid rgb(217, 215, 215)" }}>
+                style={{ color: "white", backgroundColor: "#cf3036", marginRight: "4px", border: "1px solid whitesmoke" }}>
                 <FontAwesomeIcon icon={faPlus}/> Module
             </button>
             <button className="btn home-btn"
-                style={{ backgroundColor: "rgb(240, 237, 237)", marginRight: "4px", border: "1px solid rgb(217, 215, 215)" }}>
+                style={{ backgroundColor: "white", marginRight: "4px", border: "1px solid whitesmoke" }}>
                 <FontAwesomeIcon icon={faEllipsisVertical}/>{" "}
             </button>
         </div>
