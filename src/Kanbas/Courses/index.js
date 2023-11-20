@@ -10,6 +10,7 @@ import Grades from "./Grades";
 
 
 function Courses({ courses }) {
+  const URL = "http://localhost:4000/api/courses";
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   return (

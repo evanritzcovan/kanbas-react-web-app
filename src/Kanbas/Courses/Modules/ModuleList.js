@@ -1,16 +1,39 @@
-import React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faCircle, faCheck, faSortDown, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
-import { addModule, deleteModule, updateModule, setModule } from "./modulesReducer";
+import { addModule, deleteModule, updateModule, setModule, setModules } from "./modulesReducer";
+import { findModulesForCourse, createModule } from "./client";
+import * as client from "./client";
 
 function ModuleList() {
-    const { courseId } = useParams();
+    const courseId = useParams();
     const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        findModulesForCourse(courseId).then((modules) => dispatch(setModules(modules)));
+    }, [courseId, dispatch]);
+
+    const handleAddModule = () => {
+        createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
+      };
+    
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
+    const handleUpdateModule = async () => {
+        const newModule = await client.updateModule(module);
+        dispatch(updateModule(newModule));
+    };
 
     return (
         <ul className="list-group mt-5 me-1" style={{ display: "block" }}>
@@ -18,10 +41,11 @@ function ModuleList() {
                 <input className="form-control" value={module.name} onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}/>
                 <textarea className="form-control" value={module.description} onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}/>
                 <div class="text-center mt-2">
-                    <button onClick={() => dispatch(addModule({ ...module, course: courseId }))} className="btn btn-success text-center me-2">
+                    <button onClick={handleAddModule} className="btn btn-success text-center me-2">
+                        {" "}
                         Add Module
                     </button>
-                    <button onClick={() => dispatch(updateModule(module))} className="btn btn-info text-center">
+                    <button onClick={handleUpdateModule} className="btn btn-info text-center">
                         Update Module
                     </button>
                 </div>
@@ -37,7 +61,7 @@ function ModuleList() {
                         <button className="btn btn-sucess ms-3 me-2" style={{ color: "white", backgroundColor: "green" }} onClick={() => dispatch(setModule(module))}>
                             Edit
                         </button>
-                        <button className="btn btn-danger me-5" onClick={() => dispatch(deleteModule(module._id))}>
+                        <button className="btn btn-danger me-5" onClick={() => handleDeleteModule(module._id)}>
                             Delete
                         </button>
                         <span className="float-end fa-2xs" style={{ display: "inline" }}>

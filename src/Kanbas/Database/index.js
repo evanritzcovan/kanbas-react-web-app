@@ -6,10 +6,10 @@ import enrollments from "./enrollments.json";
 import grades from "./grades.json";
 
 export default {
-  courses,
-  modules,
-  assignments,
-  users,
-  enrollments,
-  grades,
+    courses,
+    modules,
+    assignments,
+    users,
+    enrollments,
+    grades,
 };

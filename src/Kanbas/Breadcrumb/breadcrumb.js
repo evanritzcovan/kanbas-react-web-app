@@ -1,15 +1,42 @@
 import { Link, useLocation, useParams } from "react-router-dom";
-import db from "../../Kanbas/Database";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faGlasses } from "@fortawesome/free-solid-svg-icons";
+import * as service from "../service";
 
 function Breadcrumb() {
     const { pathname } = useLocation();
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
     const path = pathname.split("/");
     const pathEnding = path.pop().replace(/%20/g, " ");
     const pathSecondLast = path.pop().replace(/%20/g, " ");
+    const [course, setCourse] = useState(undefined);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const fetchedCourse = await service.fetchCourseById(courseId);
+                setCourse(fetchedCourse);
+            } catch (error) {
+                console.error("Error fetching course:", error);
+                setCourse({
+                    _id: courseId,
+                    abbreviation: "RS101",
+                    name: "Rocket Propulsion",
+                    number: "RS4550",
+                    startDate: "2023-01-10",
+                    endDate: "2023-05-15",
+                    color: "lightblue",
+                    numberLong: "123454",
+                });
+            }
+        };
+        fetchData();
+    }, [courseId]);
+    
+    if (!course) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="col">

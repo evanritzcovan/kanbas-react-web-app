@@ -4,8 +4,8 @@ import "../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faCircle, faEllipsisVertical, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, updateAssignment, selectAssignment } from "../assignmentsReducer";
-
+import { addAssignment, updateAssignment as updateAssignmentAction, selectAssignment } from "../assignmentsReducer";
+import { createAssignment, updateAssignment } from "../client";
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();
@@ -13,15 +13,27 @@ function AssignmentEditor() {
     const dispatch = useDispatch();
     const { courseId } = useParams();
     const navigate = useNavigate();
+
+    const handleAddAssignment = (assignment) => {
+        createAssignment(courseId, assignment).then((assignment) => {
+            dispatch(addAssignment(assignment));
+        });
+    };
+
+    const handleUpdateAssignment = async (assignment) => {
+        const updatedAssignment = await updateAssignment(assignment);
+        dispatch(updateAssignmentAction(updatedAssignment));
+    };
+
     const handleSave = () => {
         if (assignmentId === "new") {
             const newAssignment = {
                 ...assignment,
                 _id: new Date().getTime().toString(),
             };
-            dispatch(addAssignment(newAssignment));
+            handleAddAssignment(newAssignment);
         } else {
-            dispatch(updateAssignment(assignment));
+            handleUpdateAssignment(assignment);
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
