@@ -102,7 +102,14 @@ function KanbasNavigation() {
         <div className="col-1 d-none d-lg-block navbar navbar bg-black" style={{ width: "85px" }}>
             <ul className="nav flex-column">
                 <li className="mb-2">
-                    <img src="https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png" alt="NU logo" width={75} height={75}/>
+                    <Link to="/Kanbas/Dashboard">
+                        <img src="https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png" 
+                            alt="NU logo" 
+                            width="90%" 
+                            height="90%"
+                            style={{ marginLeft: "5%", marginTop: "5%" }}
+                        />
+                    </Link>
                 </li>
 
                 {links.map((link, index) => (

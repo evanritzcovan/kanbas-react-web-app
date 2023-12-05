@@ -15,7 +15,14 @@ function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, upd
     return (
         <div className="col dash-col">
             <h1 className="dash-header">
-                Dashboard <hr style={{ marginTop: "4px" }} />
+                Dashboard
+                <Link to="/kanbas/signin">
+                    <button className="btn btn-danger ms-3 me-2">Sign In</button>
+                </Link>
+                <Link to="/kanbas/signup">
+                    <button className="btn btn-warning">Sign Up</button>
+                </Link>
+                <hr className="mt-2" />
             </h1>
 
             <h3 className="dash-subheader">

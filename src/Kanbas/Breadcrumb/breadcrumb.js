@@ -35,7 +35,10 @@ function Breadcrumb() {
     }, [courseId]);
     
     if (!course) {
-        return <div>Loading...</div>;
+        return <div className="alert alert-danger mt-3" role="alert">
+          Loading data from the NodeJS Server. Please allow up to 1 minute. Sorry for the
+          inconvenience.
+        </div>;
     }
 
     return (

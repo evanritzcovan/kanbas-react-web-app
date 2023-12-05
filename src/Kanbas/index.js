@@ -6,6 +6,10 @@ import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
 import * as service from "./service";
+import Signin from "./users/signin";
+import Signup from "./users/signup";
+import Account from "./users/account";
+import UserTable from "./users/table";
 
 function Kanbas() {
     const [courses, setCourses] = useState([]);
@@ -30,7 +34,6 @@ function Kanbas() {
 
     const addNewCourse = async () => {
         try {
-            console.log("kanbas/index.js addNewCourse: " + course.name);
             const newCourse = await service.addNewCourse(course);
             setCourses([newCourse, ...courses]);
         } catch (error) {
@@ -50,7 +53,6 @@ function Kanbas() {
     const updateCourse = async (course) => {
         try {
             const updatedCourse = await service.updateCourse(course);
-            console.log("updatedCourse name: " + updatedCourse.name);
             setCourses(
                 courses.map((c) => {
                     return c._id === updatedCourse._id ? updatedCourse : c;
@@ -67,8 +69,7 @@ function Kanbas() {
                 <KanbasNavigation/>
                 <div style={{ width: "100%" }}>
                     <Routes>
-                        <Route path="/" element={<Navigate to="Dashboard"/>}/>
-                        <Route path="Account" element={<h1>Account</h1>}/>
+                        <Route path="/" element={<Navigate to="signin"/>}/>
                         <Route path="Dashboard" element={
                             <Dashboard
                                 courses={courses}
@@ -77,9 +78,14 @@ function Kanbas() {
                                 addNewCourse={addNewCourse}
                                 deleteCourse={deleteCourse}
                                 updateCourse={updateCourse}
-                           />
+                            />
                         }/>
+                        <Route path="Account" element={<Account/>}/>
                         <Route path="Courses/:courseId/*" element={<Courses courses={courses}/>}/>
+                        <Route path="/signin" element={<Signin/>}/>{" "}
+                        <Route path="/signup" element={<Signup/>}/>{" "}
+                        <Route path="/users" element={<UserTable/>}/>
+                        <Route path="/Account/:id" element={<Account/>}/>
                     </Routes>
                 </div>
             </div>
